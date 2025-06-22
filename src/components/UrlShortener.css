@@ -1,0 +1,191 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* App name at the top */
+.app-header {
+  position: absolute;
+  top: 30px;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  animation: slideFromTop 1s ease;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1.5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Card container */
+.url-shortener {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 90%;
+  animation: fadeInUp 0.8s ease;
+  text-align: center;
+  margin-top: 120px;
+}
+
+/* Animated headline */
+.url-shortener h1 {
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease;
+}
+
+/* Form layout */
+.url-shortener form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input */
+.url-shortener input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: all 0.3s;
+}
+
+.url-shortener input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Button */
+.url-shortener button {
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.url-shortener button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Short URL text */
+.url-shortener p {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #2c3e50;
+  word-break: break-word;
+}
+
+.url-shortener a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.url-shortener a:hover {
+  text-decoration: underline;
+}
+.app-navbar {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.2rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.app-title {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, color 0.3s;
+  cursor: default;
+}
+
+.app-title:hover {
+  color: #00e6e6;
+  transform: scale(1.05);
+}
+.theme-toggle {
+  position: absolute;
+  right: 30px;
+  top: 24px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+body.dark-mode .url-shortener {
+  background: #222;
+  color: #fff;
+}
+
+body.dark-mode .url-shortener input,
+body.dark-mode .url-shortener button {
+  background: #333;
+  color: white;
+  border: 1px solid #444;
+}
+
+body.dark-mode .url-shortener button:hover {
+  background: #0077cc;
+}
+
+body.dark-mode .app-title {
+  color: #00faff;
+}

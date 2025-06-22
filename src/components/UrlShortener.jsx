@@ -9,7 +9,7 @@ export default function UrlShortener() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/shorten', { originalUrl });
+      const res = await axios.post('https://url-shortener-api-lkfl.onrender.com', { originalUrl });
       setShortUrl(res.data.shortUrl);
     } catch (err) {
       console.error(err);
